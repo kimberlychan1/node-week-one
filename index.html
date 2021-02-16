@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Upload a file</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        html{
+            background-color: #332863;
+            color: #f1afbd;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            /* max-width: 400px; */
+            margin: 20% auto;
+            padding: 20px;
+            text-align: center;
+        }
+        [type="file"]{
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        [type="submit"], #showFile{
+            cursor: pointer;
+            font-size: 16px;
+            background: #a47eeb;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: 1px solid #3d043d;
+            border-radius: 3px;
+        }
+    </style>
+  </head>
+  <body class="container">
+    <h1>Choose a file to upload!</h1>
+    <form method="post" enctype="multipart/form-data"  id="upload">
+        <input id="name" type="file" name="file" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    <button type="button" id="showFile">Show file</button>
+    <form method="get" enctype="multipart/form-data" action="/download" id="download">
+      <ul id="list"></ul>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
