@@ -1,13 +1,14 @@
 $("#showFile").click((e) => {
     e.preventDefault();
     $('#list').empty()
-    $.getJSON("http://localhost:8080/uploaded-files")
+    $.get("/uploaded-files")
     .done(function(data){
-        data.map((data) => {
+        for(let item of JSON.parse(data)) {
             $("#list").append(
-                `<p><button type="submit" name="${data}">${data}</button></p>`
+                `<p><a href='/download/${item}'>${item}</a></p><br>`
+                // `<p><button type="submit" name="${item}">${item}</button></p>`
             )
-        })
+        }
     })
     .fail(function(){
         console.log("Fail")

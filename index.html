@@ -22,7 +22,7 @@
             margin-bottom: 10px;
             font-size: 18px;
         }
-        [type="submit"], #showFile{
+        [type="submit"], #showFile, a{
             cursor: pointer;
             font-size: 16px;
             background: #a47eeb;
@@ -41,9 +41,9 @@
     </form>
 
     <button type="button" id="showFile">Show file</button>
-    <form method="get" enctype="multipart/form-data" action="/download" id="download">
+    <!-- <form method="get" enctype="multipart/form-data" action="/download/:id" id="download"> -->
       <ul id="list"></ul>
-    </form>
+    <!-- </form> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./index.js"></script>
   </body>
